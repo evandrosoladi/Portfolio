@@ -3,7 +3,7 @@ const dadosPortefolio = {
     { icone: "🛠", titulo: "Hardware", descricao: "Diagnóstico, montagem e manutenção de computadores." },
     { icone: "⌘", titulo: "Redes", descricao: "TCP/IP, configuração, conectividade e redes locais." },
     { icone: "▣", titulo: "Sistemas", descricao: "Windows, Linux, instalação e administração." },
-    { icone: "</>", titulo: "Desenvolvimento Web", descricao: "HTML, CSS, JavaScript, React e APIs." },
+    { icone: "&lt;/&gt;", titulo: "Desenvolvimento Web", descricao: "HTML, CSS, JavaScript, React e APIs." },
     { icone: "🎯", titulo: "Cibersegurança & Pentest", descricao: "Prática em TryHackMe, segurança ofensiva e técnicas de testes de penetração." },
     { icone: "⚡", titulo: "Eletrónica & IoT", descricao: "Prototipagem e programação com Arduino." }
   ],
