@@ -1,18 +1,59 @@
 const dadosPortefolio = {
   competencias: [
-    { icone: "🛠", titulo: "Hardware", descricao: "Diagnóstico de computadores." },
+    { icone: "🛠", titulo: "Hardware", descricao: "Diagnóstico, montagem e manutenção de computadores." },
     { icone: "⌘", titulo: "Redes", descricao: "TCP/IP, configuração, conectividade e redes locais." },
-    { icone: "▣", titulo: "Sistemas", descricao: "Windows, Linux, instalação." },
-    { icone: '&lt/&gt', titulo: "Desenvolvimento Web", descricao: "HTML, CSS, JavaScript, React e APIs." }
+    { icone: "▣", titulo: "Sistemas", descricao: "Windows, Linux, instalação e administração." },
+    { icone: "</>", titulo: "Desenvolvimento Web", descricao: "HTML, CSS, JavaScript, React e APIs." },
+    { icone: "🎯", titulo: "Cibersegurança & Pentest", descricao: "Prática em TryHackMe, segurança ofensiva e técnicas de testes de penetração." },
+    { icone: "⚡", titulo: "Eletrónica & IoT", descricao: "Prototipagem e programação com Arduino." }
   ],
   projetos: [
-    { imagem: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80", titulo: "Manutenção de Computadores", descricao: "Diagnóstico, limpeza, instalação e optimização de computadores.", etiquetas: "Hardware • Windows" },
-    { imagem: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80", titulo: "Infraestrutura de Rede Local", descricao: "Planeamento de rede local, cablagem, configuração e documentação.", etiquetas: "Redes • TCP/IP" },
-    { imagem: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=700&q=80", titulo: "Portfólio Web", descricao: "Website responsivo desenvolvido para apresentar competências e projectos.", etiquetas: "HTML • CSS • JavaScript" }
+    { 
+      imagem: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=700&q=80", 
+      titulo: "Práticas de Pentest & Cibersegurança", 
+      descricao: "Resolução de desafios práticos na plataforma TryHackMe com aplicação de técnicas de testes de penetração.", 
+      etiquetas: "Pentest • TryHackMe • Linux • Segurança" 
+    },
+    { 
+      imagem: "https://images.unsplash.com/photo-1553406830-ef2513450d76?auto=format&fit=crop&w=700&q=80", 
+      titulo: "Controlo de Sinalização com Arduino", 
+      descricao: "Criação e programação de semáforos automatizados com microcontrolador Arduino para simulação de tráfego.", 
+      etiquetas: "Arduino • C++ • Eletrónica • IoT" 
+    },
+    { 
+      imagem: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80", 
+      titulo: "Simulação Aeroespacial", 
+      descricao: "Desenvolvimento de simulações físicas e dinâmicas aeroespaciais aplicadas à computação.", 
+      etiquetas: "Simulação • Física • Programação" 
+    },
+    { 
+      imagem: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=700&q=80", 
+      titulo: "Demonstração do Genoma Humano", 
+      descricao: "Projecto colaborativo focado na modelação e representação do DNA, RNA e síntese de proteínas.", 
+      etiquetas: "Bioinformática • Genoma • Trabalho em Equipa" 
+    },
+    { 
+      imagem: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80", 
+      titulo: "Manutenção de Computadores", 
+      descricao: "Diagnóstico, limpeza, instalação e optimização de computadores.", 
+      etiquetas: "Hardware • Windows" 
+    },
+    { 
+      imagem: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80", 
+      titulo: "Infraestrutura de Rede Local", 
+      descricao: "Planeamento de rede local, cablagem, configuração e documentação.", 
+      etiquetas: "Redes • TCP/IP" 
+    },
+    { 
+      imagem: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=700&q=80", 
+      titulo: "Portfólio Web", 
+      descricao: "Website responsivo desenvolvido para apresentar competências e projectos.", 
+      etiquetas: "HTML • CSS • JavaScript" 
+    }
   ],
   experiencias: [
-    { data: "2025 — ACTUAL", titulo: "Técnico de Informática / Estudante", descricao: "Formação e prática em suporte técnico, redes, desenvolvimento web e sistemas de informação." },
-    { data: "PROJECTOS • FREELANCE", titulo: "Projectos e desenvolvimento", descricao: "Desenvolvimento de aplicações e experiências práticas em programação, web e infraestrutura." }
+    { data: "2025 — ACTUAL", titulo: "Técnico de Informática / Estudante", descricao: "Formação e prática em suporte técnico, redes, cibersegurança, desenvolvimento web e sistemas de informação." },
+    { data: "PROJECTOS • FREELANCE", titulo: "Projectos e desenvolvimento", descricao: "Desenvolvimento de aplicações, práticas em cibersegurança, IoT e experiências acadêmicas e multidisciplinares." }
   ]
 };
 
@@ -63,14 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const botaoMenu = document.querySelector(".botao-menu");
   const barraNavegacao = document.querySelector(".barra-navegacao");
-  botaoMenu.addEventListener("click", () => barraNavegacao.classList.toggle("menu-aberto"));
+  if (botaoMenu && barraNavegacao) {
+    botaoMenu.addEventListener("click", () => barraNavegacao.classList.toggle("menu-aberto"));
 
-  document.querySelectorAll(".links-navegacao a").forEach(link => {
-    link.addEventListener("click", () => barraNavegacao.classList.remove("menu-aberto"));
-  });
-
-  document.querySelector("#formulario-contacto").addEventListener("submit", evento => {
-    evento.preventDefault();
-    alert("Formulário de demonstração. Ligue este formulário a um backend ou serviço de formulários para receber mensagens.");
-  });
+    document.querySelectorAll(".links-navegacao a").forEach(link => {
+      link.addEventListener("click", () => barraNavegacao.classList.remove("menu-aberto"));
+    });
+  }
 });
